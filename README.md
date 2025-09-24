@@ -85,8 +85,8 @@ You must have Node.js (v16+) and npm installed on your machine.
     # MySQL Database Connection
     DB_HOST=localhost
     DB_USER=root
-    DB_PASSWORD=your_database_password
-    DB_NAME=your_database_name
+    DB_PASSWORD=root
+    DB_NAME=oauth_demo
 
     # Google OAuth Credentials
     GOOGLE_CLIENT_ID=your_google_client_id
@@ -125,3 +125,4 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 Shreyash Parsekar - [@mrparsekar](https://github.com/mrparsekar)
 
 Project Link: [https://github.com/mrparsekar/SocialMediaISA1](https://github.com/mrparsekar/SocialMediaISA1)
+
