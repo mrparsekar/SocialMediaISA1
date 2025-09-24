@@ -1,0 +1,117 @@
+/* Global */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8fafc;
+    color: #333;
+}
+
+/* Container */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+button.logout-button.header-logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span.welcome-message {
+    font-size: 3.2em;
+}
+
+/* Header */
+.dashboard-header {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.header-right {
+    position: relative;
+}
+
+.user-icon-container {
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.user-icon-container:hover {
+    transform: scale(1.1);
+}
+
+.user-icon {
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Dropdown */
+.user-dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    margin-top: 8px;
+    background-color: #fff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    z-index: 1000;
+    min-width: 160px;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.logout-button {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.logout-button:hover {
+    background-color: #f0f2f5;
+    color: #007bff;
+}
+
+/* Main content */
+.dashboard-content {
+    flex-grow: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-content p {
+    font-size: 1.25rem;
+    color: #555;
+    margin-top: 1rem;
+}
+
+/* Simple fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
