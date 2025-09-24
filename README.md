@@ -5,7 +5,7 @@
 [![Forks](https://img.shields.io/github/forks/mrparsekar/SocialMediaISA1)](https://github.com/mrparsekar/SocialMediaISA1/network/members)
 [![Stars](https://img.shields.io/github/stars/mrparsekar/SocialMediaISA1)](https://github.com/mrparsekar/SocialMediaISA1/stargazers)
 
-A full-stack social media application built with Node.js and a modern frontend, featuring secure user authentication via Google OAuth 2.0.
+A full-stack social media application built with React, Vite, Node.js, and MySQL, featuring secure user authentication via Google OAuth 2.0.
 
 **🚀 [Live Demo](https://your-live-demo-url.com) »**
 
@@ -18,11 +18,11 @@ A full-stack social media application built with Node.js and a modern frontend, 
 
 ### About The Project
 
-This project was built to demonstrate a full-stack implementation of Google OAuth 2.0 in a modern web application. It provides a foundational structure for a social media platform where users can securely log in, create posts, and interact with a community feed.
+This project was built to demonstrate a full-stack implementation of Google OAuth 2.0 in a modern web application using a SQL database. It provides a foundational structure for a social media platform where users can securely log in, create posts, and interact with a community feed.
 
 The repository is structured as a monorepo with two distinct parts:
 * `oauth-backend`: A RESTful API built with Node.js and Express.
-* `oauth-frontend`: A dynamic single-page application built with Vite.
+* `oauth-frontend`: A dynamic single-page application built with React and Vite.
 
 ### Key Features
 
@@ -39,11 +39,11 @@ Here are the major frameworks and libraries used in this project:
 * **Backend:**
     * ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
     * ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-    * ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+    * ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
     * ![Passport.js](https://img.shields.io/badge/Passport.js-34E27A?style=for-the-badge&logo=passport&logoColor=white)
 * **Frontend:**
     * ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-    * * ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+    * ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 ---
 
@@ -77,13 +77,16 @@ You must have Node.js (v16+) and npm installed on your machine.
     ```sh
     npm install
     ```
-3.  Create a `.env` file in this directory and add your environment variables:
+3.  Create a `.env` file in this directory and add your environment variables for your MySQL database:
     ```env
     # Server Port
     PORT=5000
 
-    # MongoDB Connection String
-    MONGO_URI=your_mongodb_connection_string
+    # MySQL Database Connection
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASSWORD=your_database_password
+    DB_NAME=your_database_name
 
     # Google OAuth Credentials
     GOOGLE_CLIENT_ID=your_google_client_id
@@ -119,6 +122,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ### Contact
 
-Prathamesh Parsekar - [@mrparsekar](https://github.com/mrparsekar)
+Shreyash Parsekar - [@mrparsekar](https://github.com/mrparsekar)
 
 Project Link: [https://github.com/mrparsekar/SocialMediaISA1](https://github.com/mrparsekar/SocialMediaISA1)
