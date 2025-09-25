@@ -11,20 +11,36 @@ body {
 
 /* Wrapper */
 .dashboard-wrapper {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background: #e9eeff;
+}
+
+.user-icon{
+  width: 35px;
+  height: 35px;
 }
 
 /* Sidebar */
 .sidebar {
-  width: 220px;
-  background: #1e73be;
-  padding: 1.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  color: #fff;
+    width: 220px;
+    background: #1e73be;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #fff;
+    margin: 1rem 0rem 1rem 2rem;
+    border-radius: 1rem;
+}
+
+.sidebar p {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 2rem;
 }
 
 .sidebar-title {
@@ -59,22 +75,32 @@ body {
 
 /* Main Content */
 .main-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    margin: 1rem 2rem 2rem 1rem;
 }
 
 /* Header */
 .dashboard-header {
-  background: #1e73be;
-  color: #fff;
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+    background: #1e73be;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+#graphs-section {
+    display: flex;
+    justify-content: center;
+    min-height: 75vh;
+    align-items: center;
 }
 
 .dashboard-header h1 {
@@ -82,6 +108,7 @@ body {
   font-size: 1.5rem;
   font-weight: 600;
 }
+
 
 /* Profile container */
 .profile-dropdown-wrapper {
@@ -136,10 +163,13 @@ body {
 
 /* Content Area */
 .dashboard-content {
-  flex-grow: 1;
-  padding: 1.5rem;
-  background: #f9fafb;
-  overflow-y: auto;
+    flex-grow: 1;
+    padding: 1.5rem;
+    background: #f9fafb;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
 }
 
 .dashboard-content h2 {
@@ -181,14 +211,28 @@ body {
 
 /* Carousel container */
 .carousel {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  height: 400px;
-  margin: auto;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+    width: 100%;
+    min-width: 800px;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#home-overview {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+}
+
+.explore-btn {
+    background: #0d47a1;
+    font-size: 1.2em;
+}
+
+.explore-btn:hover {
+    background: #073c8a;
 }
 
 .carousel img,

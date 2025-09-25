@@ -57,6 +57,14 @@ const Dashboard = () => {
     "/images/matplotlib/M4_Histogram.png",
     "/images/matplotlib/M5_Pie.png",
   ];
+  
+  const overview_images = [
+    "/images/matplotlib/M1_line.png",
+    "/images/seaborn/S1_line.png",
+    "/images/matplotlib/M4_Histogram.png",
+    "/images/seaborn/S3_Scatter.png",
+    "/src/assets/Screenshot 2025-09-25 142620.png"
+  ];
 
   const seabornGraphs = [
     "/images/seaborn/S1_line.png",
@@ -86,20 +94,23 @@ const Dashboard = () => {
         <button className={activeTab === "matplotlib" ? "active" : ""} onClick={() => setActiveTab("matplotlib")}>Matplotlib</button>
         <button className={activeTab === "seaborn" ? "active" : ""} onClick={() => setActiveTab("seaborn")}>Seaborn</button>
         <button className={activeTab === "plotly" ? "active" : ""} onClick={() => setActiveTab("plotly")}>Plotly</button>
+
+        <p>Version 1.1</p>
       </aside>
 
       {/* Main content */}
       <div className="main-content">
         {/* Header */}
         <header className="dashboard-header">
-          <h1>{activeTab === "home" ? "Overview" : activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}</h1>
+          {<h2 className="welcome-text">Welcome, {user ? user.name : "User"} 🎉</h2>}
 
           <div className="profile-dropdown-wrapper" ref={profileRef} style={{ position: "relative" }}>
+          <div><img className="user-icon" src="/src/assets/user.svg" alt="" /></div>
             <span
               className="profile-name"
               onClick={() => setShowProfile(!showProfile)}
               style={{ cursor: "pointer" }}
-            >
+              >
               {user?.name || "User"}
             </span>
 
@@ -124,7 +135,7 @@ const Dashboard = () => {
                   }}
                   className="logout-btn"
                   style={{ marginTop: "0.5rem", padding: "0.4rem 0.8rem", cursor: "pointer", background: "#f44336", color: "#fff", border: "none", borderRadius: "4px" }}
-                >
+                  >
                   Logout
                 </button>
               </div>
@@ -134,12 +145,36 @@ const Dashboard = () => {
 
         {/* Content */}
         <main className="dashboard-content">
-          {activeTab === "home" && <h2 className="welcome-text">Welcome, {user ? user.name : "User"} 🎉</h2>}
+            <h1>{activeTab === "home" ? "Overview" : activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}</h1>
+
+          <div id="graphs-section">
+
+            {activeTab === "home" && (
+              
+
+              <div id="home-overview">
+
+                <div className="overview-text">
+                  <p>In this project, we performed an Exploratory Data Analysis (EDA) on the dataset “Trending Music on Instagram and Snapchat”. The EDA process began with understanding the dataset structure, identifying important columns such as platform, month, trend, trend_type, music, video_style, theme, part_of_song, video_length, and music_genre, and then cleaning and analyzing the data to extract meaningful insights. Different visualizations were used to represent trends and distributions. For example, bar charts were used to show the frequency of platforms and trend types, highlighting which platform (Instagram or Snapchat) had more trending music content. Pie charts provided a clear percentage share of different music genres, showing which genres dominate on social media trends. Line plots were used to visualize patterns across months, helping us see seasonal or time-based variations in trends. Histograms helped analyze video lengths to understand user preferences for short or long videos. Finally, scatter plots showed relationships between variables such as video length and trend types. Together, these visualizations help in better understanding audience behavior, music popularity, and platform usage patterns, providing actionable insights for integration into a dashboard for interactive analysis.</p>
+
+                  <div>
+                    <button className={activeTab === "matplotlib" ? "active" : "explore-btn" } onClick={() => setActiveTab("matplotlib")}>Explore Project</button>
+                  </div>
+                </div>
+
+                <div className="carousel">
+                <button className="carousel-btn left" onClick={prevSlide}>❮</button>
+                <img className="graph-img" src={overview_images[currentIndex]} alt={`Matplotlib ${currentIndex + 1}`} />
+                <button className="carousel-btn right" onClick={nextSlide}>❯</button>
+            </div>
+              </div>
+            
+          )}
 
           {activeTab === "matplotlib" && (
             <div className="carousel">
               <button className="carousel-btn left" onClick={prevSlide}>❮</button>
-              <img src={matplotlibGraphs[currentIndex]} alt={`Matplotlib ${currentIndex + 1}`} />
+              <img className="graph-img" src={matplotlibGraphs[currentIndex]} alt={`Matplotlib ${currentIndex + 1}`} />
               <button className="carousel-btn right" onClick={nextSlide}>❯</button>
             </div>
           )}
@@ -147,7 +182,7 @@ const Dashboard = () => {
           {activeTab === "seaborn" && (
             <div className="carousel">
               <button className="carousel-btn left" onClick={prevSlide}>❮</button>
-              <img src={seabornGraphs[currentIndex]} alt={`Seaborn ${currentIndex + 1}`} />
+              <img className="graph-img" src={seabornGraphs[currentIndex]} alt={`Seaborn ${currentIndex + 1}`} />
               <button className="carousel-btn right" onClick={nextSlide}>❯</button>
             </div>
           )}
@@ -162,11 +197,12 @@ const Dashboard = () => {
                   style={{ width: "100%", height: "100%" }}
                   useResizeHandler
                   config={{ responsive: true }}
-                />
+                  />
               </div>
               <button className="carousel-btn right" onClick={nextSlide}>❯</button>
             </div>
           )}
+          </div>
         </main>
       </div>
 
